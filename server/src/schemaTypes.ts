@@ -40,7 +40,7 @@ export type Task = {
 };
 
 export type ToggleTaskInput = {
-  taksId: Scalars['Int'];
+  taskId: Scalars['Int'];
   completedAt?: Maybe<Scalars['String']>;
 };
 

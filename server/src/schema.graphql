@@ -7,7 +7,7 @@ type Task {
 }
 
 input ToggleTaskInput {
-  taksId: Int!
+  taskId: Int!
   completedAt: String
 }
 

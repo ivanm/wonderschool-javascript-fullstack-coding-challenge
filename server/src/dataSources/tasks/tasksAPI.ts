@@ -1,21 +1,21 @@
-import { TaskModel } from '../../models/TaskModel'
-import { TasksData } from './tasksData'
-import { DataSource } from 'apollo-datasource'
-import { ToggleTaskInput } from '../../schemaTypes'
+import { TaskModel } from "../../models/TaskModel";
+import { TasksData } from "./tasksData";
+import { DataSource } from "apollo-datasource";
+import { ToggleTaskInput } from "../../schemaTypes";
 
 export class TasksAPI extends DataSource {
-  taskData: TasksData
+  taskData: TasksData;
 
   constructor() {
-    super()
-    this.taskData = new TasksData()
+    super();
+    this.taskData = new TasksData();
   }
 
   getTasks(): Promise<TaskModel[]> {
-    return this.taskData.getTasks()
+    return this.taskData.getTasks();
   }
 
   toggleTask(_toggleTaskInput: ToggleTaskInput): Promise<boolean> {
-    return Promise.resolve(true)
+    return this.taskData.toggleTask(_toggleTaskInput);
   }
 }
